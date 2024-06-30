@@ -17,14 +17,22 @@ Modify the openaikey to your openai key. Caution:- Do not share your personal ke
 Execute
 
 pip3 install openai
+
 pip3 install langchain
+
 pip3 install langchain_community
+
 pip3 install unstructured
+
 pip3 install tiktoken
+
 pip3 install langchain_openai
+
 pip3 install chromadb
 
+
 python3 upload-vector-embeddings.py
+
 python3 chat-with-data.py
 
 
