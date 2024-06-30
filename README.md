@@ -1,3 +1,9 @@
+**Here is a Highlevel flow of the process**
+
+![llm-doc-interactor](https://github.com/ArunSridharan83/llm-genai-data-interaction/assets/68751492/9e910dd5-c89e-4ba6-8c68-0ba7bb6cf43a)
+
+
+
 # llm-genai-data-interaction
 Python program and Langchain to interact with a rich set of documents using LLM models and Generative AI
 
