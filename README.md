@@ -10,6 +10,8 @@ git clone https://github.com/ArunSridharan83/llm-genai-data-interaction.git
 Modify the following values
 
 Modify the "change-to-data-folder" to the path where the documents are placed. documents can be of type .pdf,.txt,.csv,.doc,.docx
+
+
 Modify the openaikey to your openai key. Caution:- Do not share your personal key
 
 Execute
