@@ -1,0 +1,38 @@
+import chromadb
+import warnings
+import openai
+from langchain_community.document_loaders import DirectoryLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.chains.question_answering import load_qa_chain
+from langchain_openai import OpenAIEmbeddings
+from langchain_openai import OpenAI
+from chromadb.utils import embedding_functions
+import os
+
+
+directory = 'change-to-data-folder'   #keep multiple files (.txt, .pdf) in data folder.
+warnings.filterwarnings('ignore')
+os.environ['OPENAI_API_KEY'] = 'openaikey'
+
+def load_docs(directory):
+  loader = DirectoryLoader(directory)
+  documents = loader.load()
+  return documents
+
+documents = load_docs(directory)
+len(documents)
+
+def split_docs(documents, chunk_size=1000, chunk_overlap=20):
+  text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+  docs = text_splitter.split_documents(documents)
+  return docs
+
+docs = split_docs(documents)
+
+
+persist_directory='change-to-db-path'
+from langchain.embeddings.openai import OpenAIEmbeddings
+embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
+from langchain.vectorstores import Chroma
+db = Chroma.from_documents(docs, embeddings, persist_directory=persist_directory, collection_metadata={"hnsw:space": "cosine"})
+db.persist()
