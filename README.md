@@ -2,6 +2,27 @@
 
 ![llm-doc-interactor](https://github.com/ArunSridharan83/llm-genai-data-interaction/assets/68751492/9e910dd5-c89e-4ba6-8c68-0ba7bb6cf43a)
 
+**Clone the repo**
+
+git clone https://github.com/ArunSridharan83/llm-genai-data-interaction.git
+Modify the following values
+
+Modify the "change-to-data-folder" to the path where the documents are placed. documents can be of type .pdf,.txt,.csv,.doc,.docx
+Modify the openaikey to your openai key. Caution:- Do not share your personal key
+
+Execute
+
+pip3 install openai
+pip3 install langchain
+pip3 install langchain_community
+pip3 install unstructured
+pip3 install tiktoken
+pip3 install langchain_openai
+pip3 install chromadb
+
+python3 upload-vector-embeddings.py
+python3 chat-with-data.py
+
 
 
 # llm-genai-data-interaction
